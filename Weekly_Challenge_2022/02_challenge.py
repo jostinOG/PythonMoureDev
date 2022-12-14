@@ -18,5 +18,18 @@
  */"""
 
 
-def fib(n):
-    pass
+def fib(x):
+    if x < 2:
+        return x
+    else:
+        # fn = fn-1 + fn-2
+        return fib(x - 1) + fib(x - 2)
+
+
+def main():
+    for i in range(51):
+        print(fib(i))
+
+
+if __name__ == '__main__':
+    main()
