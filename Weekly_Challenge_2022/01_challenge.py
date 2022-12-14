@@ -52,8 +52,6 @@ def sort_str(string):
 def remove_accents(str):
     str_sin_tildes = unidecode.unidecode(str)
     return str_sin_tildes
-
-
 # Main
 if __name__ == '__main__':
     string1 = input('Introduce la primera palabra:\n')
