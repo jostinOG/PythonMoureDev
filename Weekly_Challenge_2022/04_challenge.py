@@ -20,20 +20,8 @@
 
 
 class Polygon:
-    def __init__(self, number_sides):
-        self.number_sides = number_sides
-
-    # who am I?
-    def who_am_i(self):
-        if self.number_sides == 3:
-            print("I am a triangle")
-        elif self.number_sides == 4:
-            print("I am a rectangle or square")
-
-
-
-    def how_many_sides(self):
-        return self.number_sides
+    def __init__(self):
+        pass
 
     def area(self):
         return "No Area"
@@ -51,6 +39,9 @@ class Triangle(Polygon):
         # area = (base * height) / 2
         return self.base * self.height / 2
 
+    def __str__(self):
+        return "I am a triangle"
+
 
 class Square(Polygon):
     def __init__(self, side):
@@ -59,6 +50,9 @@ class Square(Polygon):
     def area(self):
         # area= side * side
         return self.side * self.side
+
+    def __str__(self):
+        return "I am a square"
 
 
 class Rectangle(Polygon):
@@ -70,6 +64,9 @@ class Rectangle(Polygon):
     def area(self):
         # area=base*height
         return self.base * self.height
+
+    def __str__(self):
+        return "I am a rectangle"
 
 
 if __name__ == '__main__':
