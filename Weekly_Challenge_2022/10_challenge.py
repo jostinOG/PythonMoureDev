@@ -22,12 +22,10 @@
 
 # Paso 1: Equilibrado significa que estos delimitadores se abren y cieran en orden y de forma correcta.
 # Paso 2: Paréntesis, llaves y corchetes son igual de prioritarios. No hay uno más importante que otro.
-# Paso 3: Expresión balanceada: { [ a * ( c + d ) ] - 5 }
-# Paso 4: Expresión no balanceada: { a * ( c + d ) ] - 5 }
-# Paso 5: Crear una función que compruebe si los paréntesis, llaves y corchetes de una expresión están equilibrados.
-# Paso 6: Crear una lista con los delimitadores.
-# Paso 7: Crear una lista con los delimitadores de apertura.
-# Paso 8: Crear una lista con los delimitadores de cierre.
+# Paso 3: Crear una función que compruebe si los paréntesis, llaves y corchetes de una expresión están equilibrados.
+# Paso 4: Crear una lista con los delimitadores.
+# Paso 5: Crear una lista con los delimitadores de apertura.
+# Paso 6: Crear una lista con los delimitadores de cierre.
 def balanced(expression):
     delimiters = ['(', ')', '{', '}', '[', ']']
     open_delimiters = ['(', '{', '[']
@@ -46,15 +44,19 @@ def balanced(expression):
     return len(stack) == 0
 
 
-# Paso 9: Crear una función que compruebe si los paréntesis, llaves y corchetes de una expresión están equilibrados.
-# Paso 10: Comprobar las siguientes expresiones en el programa principal.: { [ a * ( c + d ) ] - 5 } y { a * ( c + d ) ] - 5 }
+# Paso 7: Crear una función que compruebe si los paréntesis, llaves y corchetes de una expresión están equilibrados.
+# Paso 8: Comprobar las siguientes expresiones en el programa principal.: { [ a * ( c + d ) ] - 5 } y { a * ( c + d ) ] - 5 }
 def main():
-    expression = '{ [ a * ( c + d ) ] - 5 }' # True
+    expression = '{ [ a * ( c + d ) ] - 5 }'  # True
     print(f'Expression: {expression}')
     print(f'Balanced: {balanced(expression)}')
     expression = '{ a * ( c + d ) ] - 5 }'  # False
     print(f'Expression: {expression}')
     print(f'Balanced: {balanced(expression)}')
+    print(balanced("{ ] a * ( c + d ) + ( 2 - 3 )[ - 5 }")) # False
+    print(balanced("{{{{{{(}}}}}}")) # False
+
+
 
 
 if __name__ == '__main__':
